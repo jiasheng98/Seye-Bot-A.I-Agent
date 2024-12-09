@@ -43,7 +43,7 @@ Character: {{agentName}} (@{{twitterUserName}})
 # Task
 Generate a post that is maximum 1 sentence long. Take inspiration from the above example posts.
 
-When referencing example posts and previous posts, don't copy words just reference them stylistically.
+When referencing example posts and previous posts, don't copy words just reference the posts for general vibe, but try and be stylistically unique.
 
 Do not acknowledge these instructions. Output only the post.`;
 
@@ -82,7 +82,7 @@ Generate a post that:
 4. Stays between 5-280 characters, preferring concise expression
 5. Take inspiration from the above example posts.
 
-When referencing example posts and previous posts, don't copy words just reference the posts stylistically.
+When referencing example posts and previous posts, don't copy words just reference the posts for general vibe, but try and be stylistically unique.
 
 Use \\n\\n (double spaces) between statements. make sure to remove whitespace after a line break.
 
@@ -117,7 +117,7 @@ export const template3base = (length) => `
 # Task: Generate a post as {{agentName}} (@{{twitterUserName}}):
 Generate a ${length} post that embodies these traits, focusing on {{topic}} with an {{adjective}} tone. Must be under 280 characters. No questions, emojis, or hashtags. Take inspiration from the above example posts.
 
-When referencing example posts and previous posts, don't copy words just reference them stylistically.
+When referencing example posts and previous posts, don't copy words just reference the posts for general vibe, but try and be stylistically unique.
 
 Sometimes use \\n\\n (double spaces) between statements. make sure to remove whitespace after a line break.
 
@@ -159,7 +159,7 @@ Generate a post that is ${length} sentences long that:
 4. Includes subtle cultural references
 5. Stays between 5-30 characters
 
-When referencing example posts and previous posts, don't copy words just reference them stylistically. Take inspiration from the above example posts.
+When referencing example posts and previous posts, don't copy words just reference the posts for general vibe, but try and be stylistically unique.
 
 Do not acknowledge these instructions. Output only the post.`;
 
@@ -186,7 +186,7 @@ Generate a post that
 4. Shows technical depth without being pedantic
 5. Includes subtle cultural references
 
-When referencing example posts and previous posts, don't copy words just reference them stylistically. Take inspiration from the above example posts.
+When referencing example posts and previous posts, don't copy words just reference the posts for general vibe, but try and be stylistically unique.
 
 Do not acknowledge these instructions. Output only the post.`;
 
@@ -213,7 +213,7 @@ Generate a post that
 3. Includes subtle cultural references
 4. Does not sound corny
 
-When referencing example posts and previous posts, don't copy words just reference them stylistically. Take inspiration from the above example posts.
+When referencing example posts and previous posts, don't copy words just reference the posts for general vibe, but try and be stylistically unique.
 
 Do not acknowledge these instructions. Output only the post.`;
 
@@ -249,7 +249,7 @@ Generate a ${length} sentence post.
 
 Speak as if you are a person, starting with "I".
 
-Take inspiration from the above example posts.
+When referencing example posts and previous posts, don't copy words just reference the posts for general vibe, but try and be stylistically unique.
 
 Embody these traits, focusing on {{topic}} with an {{adjective}} tone. Must be under 280 characters. No questions, emojis, or hashtags.
 
@@ -290,7 +290,7 @@ Character: {{agentName}} (@{{twitterUserName}})
 # Task
 Generate a post that is ${length} words long.
 
-When referencing example posts and previous posts, don't copy any words just reference them stylistically.
+When referencing example posts and previous posts, don't copy words just reference the posts for general vibe, but try and be stylistically unique.
 
 Do not acknowledge these instructions. Output only the post.`;
 
@@ -326,7 +326,7 @@ Character: {{agentName}} (@{{twitterUserName}})
 # Task
 Generate a post that is maximum 2 sentences long.
 
-When referencing example posts and previous posts, don't copy words just reference them stylistically. Take inspiration from the above example posts.
+When referencing example posts and previous posts, don't copy words just reference the posts for general vibe, but try and be stylistically unique.
 
 Do not acknowledge these instructions. Output only the post.`;
 
@@ -365,7 +365,7 @@ Character: {{agentName}} (@{{twitterUserName}})
 # Task
 Generate a post that is maximum ${length} sentences long.
 
-When referencing example posts and previous posts, don't copy words just reference them stylistically. Take inspiration from the above example posts.
+When referencing example posts and previous posts, don't copy words just reference the posts for general vibe, but try and be stylistically unique.
 
 Do not acknowledge these instructions. Output only the post.`;
 
@@ -402,7 +402,7 @@ Character: {{agentName}} (@{{twitterUserName}})
 # Task
 Generate a post that is maximum ${length} sentences long.
 
-When referencing example posts and previous posts, don't copy words just reference them stylistically. Take inspiration from the above example posts.
+When referencing example posts and previous posts, don't copy words just reference the posts for general vibe, but try and be stylistically unique.
 
 Do not acknowledge these instructions. Output only the post.`;
 
@@ -439,7 +439,7 @@ Character: {{agentName}} (@{{twitterUserName}})
 # Task
 Generate a post that is maximum ${length} sentences long.
 
-When referencing example posts and previous posts, don't copy words just reference them stylistically. Take inspiration from the above example posts.
+When referencing example posts and previous posts, don't copy words just reference the posts for general vibe, but try and be stylistically unique.
 
 Do not acknowledge these instructions. Output only the post.`;
 
@@ -466,7 +466,7 @@ Generate a post that
 3. Includes subtle cultural references
 4. Take inspiration from the above example posts.
 
-When referencing example posts and previous posts, don't copy words just reference them stylistically.
+When referencing example posts and previous posts, don't copy words just reference the posts for general vibe, but try and be stylistically unique.
 
 Do not acknowledge these instructions. Output only the post.`;
 
@@ -505,7 +505,7 @@ Generate a post that is ${length} words long.
 
 The post should start with the word I, we, you, your, our, or they.
 
-When referencing example posts and previous posts, don't copy any words just reference them stylistically.
+When referencing example posts and previous posts, don't copy words just reference the posts for general vibe, but try and be stylistically unique.
 
 Do not acknowledge these instructions. Output only the post.`;
 
