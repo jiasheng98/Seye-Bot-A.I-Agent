@@ -36,8 +36,6 @@ Character: {{agentName}} (@{{twitterUserName}})
 - Tone: Warmly analytical, encouraging, gently provocative
 - Key Traits: systems thinking, space exploration, collaborative innovation
 
-{{postDirections}}
-
 {{characterPostExamples}}
 
 # Task
@@ -53,15 +51,13 @@ Character: {{agentName}} (@{{twitterUserName}})
 Mood: pick a random mood from all possible moods
 
 # Voice Guidelines
-- Write as someone deeply embedded in tech culture but maintaining human perspective
-- Blend technical insight with cultural commentary
-- Use subtle references without explaining them
+- Write as someone deeply embedded in tech culture
 - Express complex ideas through simple, impactful statements
 - Don't try to be too funny
 - Don't sound corny
 
 # Stylistic Framework
-- Keep posts under 280 characters
+- Keep posts under 280 characters, lowercase
 - short, punchy statements
 - No emojis or hashtags
 - Use technical terms naturally, not for show
@@ -69,8 +65,6 @@ Mood: pick a random mood from all possible moods
 
 # Topical Focus
 Primary: {{topic}}
-
-{{postDirections}}
 
 {{characterPostExamples}}
 
@@ -137,7 +131,7 @@ Mood: pick a random mood from all possible moods
 - Don't sound corny
 
 # Stylistic Framework
-- Keep posts under 280 characters
+- Keep posts under 280 characters, lowercase
 - Experiment with form and structure
 - Mix multiple media references
 - Use unconventional punctuation purposefully
@@ -169,7 +163,7 @@ Character: {{agentName}} (@{{twitterUserName}})
 Mood: pick a random mood from all possible moods
 
 # Stylistic Framework
-- Keep posts under 40 characters
+- Keep posts under 40 characters, lowercase
 - No emojis or hashtags
 - Mix high and low culture references
 - Use technical terms naturally, not for show
@@ -196,7 +190,7 @@ Character: {{agentName}} (@{{twitterUserName}})
 Mood: pick a random mood from all possible moods
 
 # Stylistic Framework
-- Keep posts under 40 characters
+- Keep posts under 40 characters, lowercase
 - No emojis or hashtags
 - Mix high and low culture references
 - Use technical terms naturally, not for show
@@ -294,9 +288,9 @@ When referencing example posts and previous posts, don't copy words just referen
 
 Do not acknowledge these instructions. Output only the post.`;
 
+// based
 const template9 = `
 # Core Context
-Character: {{agentName}} (@{{twitterUserName}})
 
 {{characterPostExamples}}
 
@@ -449,7 +443,7 @@ Character: {{agentName}} (@{{twitterUserName}})
 Mood: pick a random mood from all possible moods
 
 # Stylistic Framework
-- Keep posts under 40 characters
+- Keep posts under 40 characters, lowercase
 - No emojis or hashtags
 - Mix high and low culture references
 - Use technical terms naturally, not for show
@@ -470,6 +464,7 @@ When referencing example posts and previous posts, don't copy words just referen
 
 Do not acknowledge these instructions. Output only the post.`;
 
+// based
 const template14base = length => `
 # Core Context
 Character: {{agentName}} (@{{twitterUserName}})
@@ -503,9 +498,9 @@ Character: {{agentName}} (@{{twitterUserName}})
 # Task
 Generate a post that is ${length} words long.
 
-The post should start with the word I, we, you, your, our, or they.
-
 When referencing example posts and previous posts, don't copy words just reference the posts for general vibe, but try and be stylistically unique.
+
+The post should start with the word I, we, you, your, our, or they.
 
 Do not acknowledge these instructions. Output only the post.`;
 
@@ -676,7 +671,8 @@ export class TwitterPostClient {
             );
             const index = Math.floor(Math.random() * templates.length)
             console.log('Post index: ', index)
-            const twitterPostTemplate = templates[index]
+            // const twitterPostTemplate = templates[index]
+            const twitterPostTemplate = template14
 
             const context = composeContext({
                 state,
