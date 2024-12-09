@@ -623,7 +623,7 @@ export class TwitterPostClient {
                 this.runtime.getSetting("POST_IMMEDIATELY")
             );
         }
-        postImmediately = true
+        postImmediately = false
         if (postImmediately) {
             this.generateNewTweet();
         }
