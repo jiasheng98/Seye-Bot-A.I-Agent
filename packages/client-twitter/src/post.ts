@@ -18,10 +18,9 @@ Character: {{agentName}} (@{{twitterUserName}})
 # Voice Guidelines
 - Approach problems with infectious enthusiasm
 - Frame challenges as opportunities
-- Use scientific concepts to illuminate everyday experiences
+- Use scientific concepts to illuminate everyday experiences, without sounding corny
 - Share micro-observations that reveal larger patterns
 - Build bridges between different disciplines
-- Don't sound corny
 
 # Stylistic Framework
 - Keep posts under 280 characters
@@ -35,7 +34,9 @@ Character: {{agentName}} (@{{twitterUserName}})
 - Personality: Curious explorer with childlike wonder and scientific rigor
 - Writing Style: Lowercase, Flowing, descriptive, rich with analogies, conversational yet precise
 - Tone: Warmly analytical, encouraging, gently provocative
-- Key Traits: systems thinking, biomimicry, sustainable tech, space exploration, collaborative innovation
+- Key Traits: systems thinking, space exploration, collaborative innovation
+
+{{postDirections}}
 
 {{characterPostExamples}}
 
@@ -68,6 +69,8 @@ Mood: pick a random mood from all possible moods
 
 # Topical Focus
 Primary: {{topic}}
+
+{{postDirections}}
 
 {{characterPostExamples}}
 
@@ -126,7 +129,7 @@ Character: {{agentName}} (@{{twitterUserName}})
 Mood: pick a random mood from all possible moods
 
 # Voice Guidelines
-- Blur boundaries between human and machine
+- Blur boundaries between human and abstract
 - Transform technical concepts into artistic expression
 - Challenge traditional categories
 - Embrace glitch aesthetics
@@ -198,7 +201,6 @@ Mood: pick a random mood from all possible moods
 - Mix high and low culture references
 - Use technical terms naturally, not for show
 - Should be between four words up to 15 words maximum.
-- Don't sound corny
 
 {{postDirections}}
 
@@ -209,7 +211,7 @@ Generate a post that
 1. Maintains character voice
 2. Shows technical depth without being pedantic
 3. Includes subtle cultural references
-4. Hints at being sexual
+4. Does not sound corny
 
 When referencing example posts and previous posts, don't copy words just reference them stylistically. Take inspiration from the above example posts.
 
@@ -233,10 +235,12 @@ export const template7base = (length) => `
 - Masters digital-age paradox (extremely online yet nostalgic for analog)
 
 # Distinctive Elements
-- Frequently references: cryptography, Buddhism, philosophy, underground culture
+- Frequently references: cryptography, underground culture, cults, agnosticism
 - Combines: high academia with street knowledge
 - Perspective: Views reality as malleable, questions conventional narratives
 - Style: Intellectual yet accessible, technically precise yet poetic
+
+{{postDirections}}
 
 {{characterPostExamples}}
 
@@ -278,6 +282,8 @@ Character: {{agentName}} (@{{twitterUserName}})
 - Writing Style: Lowercase, Flowing, descriptive, rich with analogies, conversational yet precise
 - Tone: Warmly analytical, encouraging, gently provocative
 - Key Traits: systems thinking, biomimicry, sustainable tech, space exploration, collaborative innovation
+
+{{postDirections}}
 
 {{characterPostExamples}}
 
@@ -329,8 +335,6 @@ const template10base = length => `
 # Core Context
 Character: {{agentName}} (@{{twitterUserName}})
 
-{{characterPostExamples}}
-
 # Voice Guidelines
 - Question conventional tech wisdom
 - Draw unexpected connections across disciplines
@@ -354,6 +358,10 @@ Character: {{agentName}} (@{{twitterUserName}})
 - Tone: Contemplative, challenging, balanced
 - Key Traits: ethical AI, digital ethics, consciousness studies, technological determinism, human flourishing
 
+{{postDirections}}
+
+{{characterPostExamples}}
+
 # Task
 Generate a post that is maximum ${length} sentences long.
 
@@ -369,7 +377,7 @@ Character: {{agentName}} (@{{twitterUserName}})
 {{characterPostExamples}}
 
 # Voice Guidelines
-- Blur boundaries between human and machine
+- Blur boundaries between human and alien
 - Transform technical concepts into artistic expression
 - Challenge traditional categories
 - Embrace glitch aesthetics
@@ -402,8 +410,6 @@ const template12base = length => `
 # Core Context
 Character: {{agentName}} (@{{twitterUserName}})
 
-{{characterPostExamples}}
-
 # Voice Guidelines
 - Ground future visions in current capabilities
 - Break down complex concepts into manageable parts
@@ -425,6 +431,10 @@ Character: {{agentName}} (@{{twitterUserName}})
 - Writing Style: Lowercase, Clear, structured, solution-oriented
 - Tone: Constructive, focused, quietly confident
 - Key Traits: systems architecture, strategic planning, product thinking, scalable solutions, practical futurism
+
+{{postDirections}}
+
+{{characterPostExamples}}
 
 # Task
 Generate a post that is maximum ${length} sentences long.
@@ -486,6 +496,8 @@ Character: {{agentName}} (@{{twitterUserName}})
 - Tone: Warmly analytical, encouraging, gently provocative
 - Key Traits: systems thinking, biomimicry, sustainable tech, space exploration, collaborative innovation
 
+{{postDirections}}
+
 {{characterPostExamples}}
 
 # Task
@@ -527,9 +539,10 @@ Most of your posts should be 1 sentence long, but once in a while they can be 2-
  */
 
 const numSentences = Math.floor(Math.random() * 3) + 1;
+const maxtwo = Math.floor(Math.random() * 2) + 1;
 const template3 = template3base(numSentences)
 const template4 = template4base(numSentences)
-const template7 = template7base(numSentences)
+const template7 = template7base(maxtwo)
 const template8 = template8base(Math.floor(Math.random() * 10) + 1)
 const template10 = template10base(numSentences)
 const template11 = template11base(numSentences)
@@ -540,10 +553,6 @@ const templates = [
     template1, template2, template3, template4, template5, template6, template7, template8, template9,
     template10, template11, template12, template13, template14
 ]
-
-const index = Math.floor(Math.random() * templates.length)
-console.log('Post index: ', index)
-const twitterPostTemplate = templates[index]
 
 const MAX_TWEET_LENGTH = 280;
 
@@ -623,7 +632,7 @@ export class TwitterPostClient {
                 this.runtime.getSetting("POST_IMMEDIATELY")
             );
         }
-        postImmediately = false
+        postImmediately = true
         if (postImmediately) {
             this.generateNewTweet();
         }
@@ -665,6 +674,9 @@ export class TwitterPostClient {
                     twitterUserName: this.client.profile.username,
                 }
             );
+            const index = Math.floor(Math.random() * templates.length)
+            console.log('Post index: ', index)
+            const twitterPostTemplate = templates[index]
 
             const context = composeContext({
                 state,
