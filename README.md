@@ -2,6 +2,8 @@
 
 An AI Agent built by Nader
 
+![cognitivedriftt](cognitivedriftt.jpg)
+
 ## Based on Eliza 🤖
 
 <div align="center">
