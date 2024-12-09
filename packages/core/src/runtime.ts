@@ -856,7 +856,7 @@ Text: ${attachment.text}
                 const messageString = `${post}`;
                 return messageString;
             })
-            .slice(0, 50)
+            .slice(0, 70)
             .join("\n");
 
         const formattedCharacterMessageExamples = this.character.messageExamples
@@ -1008,7 +1008,7 @@ Text: ${attachment.text}
                     ? `${this.character.name} is interested in ` +
                       this.character.topics
                           .sort(() => 0.5 - Math.random())
-                          .slice(0, 5)
+                          .slice(0, 10)
                           .map((topic, index) => {
                               if (index === this.character.topics.length - 2) {
                                   return topic + " and ";

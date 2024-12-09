@@ -12,7 +12,7 @@ Configuration options for generating objects with a model.
 
 #### Defined in
 
-[packages/core/src/generation.ts:1041](https://github.com/ai16z/eliza/blob/main/packages/core/src/generation.ts#L1041)
+[packages/core/src/generation.ts:1058](https://github.com/dabit3/ai-agent-cognitivedriftt/blob/main/packages/core/src/generation.ts#L1058)
 
 ***
 
@@ -22,7 +22,7 @@ Configuration options for generating objects with a model.
 
 #### Defined in
 
-[packages/core/src/generation.ts:1042](https://github.com/ai16z/eliza/blob/main/packages/core/src/generation.ts#L1042)
+[packages/core/src/generation.ts:1059](https://github.com/dabit3/ai-agent-cognitivedriftt/blob/main/packages/core/src/generation.ts#L1059)
 
 ***
 
@@ -32,7 +32,7 @@ Configuration options for generating objects with a model.
 
 #### Defined in
 
-[packages/core/src/generation.ts:1043](https://github.com/ai16z/eliza/blob/main/packages/core/src/generation.ts#L1043)
+[packages/core/src/generation.ts:1060](https://github.com/dabit3/ai-agent-cognitivedriftt/blob/main/packages/core/src/generation.ts#L1060)
 
 ***
 
@@ -42,7 +42,7 @@ Configuration options for generating objects with a model.
 
 #### Defined in
 
-[packages/core/src/generation.ts:1044](https://github.com/ai16z/eliza/blob/main/packages/core/src/generation.ts#L1044)
+[packages/core/src/generation.ts:1061](https://github.com/dabit3/ai-agent-cognitivedriftt/blob/main/packages/core/src/generation.ts#L1061)
 
 ***
 
@@ -52,7 +52,7 @@ Configuration options for generating objects with a model.
 
 #### Defined in
 
-[packages/core/src/generation.ts:1045](https://github.com/ai16z/eliza/blob/main/packages/core/src/generation.ts#L1045)
+[packages/core/src/generation.ts:1062](https://github.com/dabit3/ai-agent-cognitivedriftt/blob/main/packages/core/src/generation.ts#L1062)
 
 ***
 
@@ -62,7 +62,7 @@ Configuration options for generating objects with a model.
 
 #### Defined in
 
-[packages/core/src/generation.ts:1046](https://github.com/ai16z/eliza/blob/main/packages/core/src/generation.ts#L1046)
+[packages/core/src/generation.ts:1063](https://github.com/dabit3/ai-agent-cognitivedriftt/blob/main/packages/core/src/generation.ts#L1063)
 
 ***
 
@@ -72,7 +72,7 @@ Configuration options for generating objects with a model.
 
 #### Defined in
 
-[packages/core/src/generation.ts:1047](https://github.com/ai16z/eliza/blob/main/packages/core/src/generation.ts#L1047)
+[packages/core/src/generation.ts:1064](https://github.com/dabit3/ai-agent-cognitivedriftt/blob/main/packages/core/src/generation.ts#L1064)
 
 ***
 
@@ -82,7 +82,7 @@ Configuration options for generating objects with a model.
 
 #### Defined in
 
-[packages/core/src/generation.ts:1048](https://github.com/ai16z/eliza/blob/main/packages/core/src/generation.ts#L1048)
+[packages/core/src/generation.ts:1065](https://github.com/dabit3/ai-agent-cognitivedriftt/blob/main/packages/core/src/generation.ts#L1065)
 
 ***
 
@@ -92,4 +92,4 @@ Configuration options for generating objects with a model.
 
 #### Defined in
 
-[packages/core/src/generation.ts:1049](https://github.com/ai16z/eliza/blob/main/packages/core/src/generation.ts#L1049)
+[packages/core/src/generation.ts:1066](https://github.com/dabit3/ai-agent-cognitivedriftt/blob/main/packages/core/src/generation.ts#L1066)

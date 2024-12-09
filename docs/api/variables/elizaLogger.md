@@ -6,4 +6,4 @@
 
 ## Defined in
 
-[packages/core/src/logger.ts:267](https://github.com/ai16z/eliza/blob/main/packages/core/src/logger.ts#L267)
+[packages/core/src/logger.ts:267](https://github.com/dabit3/ai-agent-cognitivedriftt/blob/main/packages/core/src/logger.ts#L267)

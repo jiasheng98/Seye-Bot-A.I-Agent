@@ -20,4 +20,4 @@ Configuration options specific to the provider.
 
 ## Defined in
 
-[packages/core/src/generation.ts:1156](https://github.com/ai16z/eliza/blob/main/packages/core/src/generation.ts#L1156)
+[packages/core/src/generation.ts:1173](https://github.com/dabit3/ai-agent-cognitivedriftt/blob/main/packages/core/src/generation.ts#L1173)

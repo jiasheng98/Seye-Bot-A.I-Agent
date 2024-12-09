@@ -86,4 +86,4 @@ Model configurations by provider
 
 ## Defined in
 
-[packages/core/src/types.ts:188](https://github.com/ai16z/eliza/blob/main/packages/core/src/types.ts#L188)
+[packages/core/src/types.ts:188](https://github.com/dabit3/ai-agent-cognitivedriftt/blob/main/packages/core/src/types.ts#L188)

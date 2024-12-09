@@ -28,4 +28,4 @@ The completed message.
 
 ## Defined in
 
-[packages/core/src/generation.ts:759](https://github.com/ai16z/eliza/blob/main/packages/core/src/generation.ts#L759)
+[packages/core/src/generation.ts:759](https://github.com/dabit3/ai-agent-cognitivedriftt/blob/main/packages/core/src/generation.ts#L759)

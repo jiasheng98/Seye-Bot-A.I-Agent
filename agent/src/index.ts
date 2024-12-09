@@ -85,10 +85,6 @@ function tryLoadFile(filePath: string): string | null {
     }
 }
 
-function isAllStrings(arr: unknown[]): boolean {
-    return Array.isArray(arr) && arr.every((item) => typeof item === "string");
-}
-
 export async function loadCharacters(
     charactersArg: string
 ): Promise<Character[]> {
@@ -155,12 +151,12 @@ export async function loadCharacters(
                 validateCharacterConfig(character);
 
                 // Handle plugins
-                if (isAllStrings(character.plugins)) {
+                if (character.plugins) {
                     elizaLogger.info("Plugins are: ", character.plugins);
                     const importedPlugins = await Promise.all(
                         character.plugins.map(async (plugin) => {
                             const importedPlugin = await import(plugin);
-                            return importedPlugin.default;
+                            return importedPlugin;
                         })
                     );
                     character.plugins = importedPlugins;
@@ -487,9 +483,7 @@ const startAgents = async () => {
     }
 
     elizaLogger.log("Chat started. Type 'exit' to quit.");
-    if (!args["non-interactive"]) {
-        chat();
-    }
+    chat();
 };
 
 startAgents().catch((error) => {
