@@ -45,10 +45,11 @@ When referencing example posts and previous posts, don't copy words just referen
 
 Do not acknowledge these instructions. Output only the post.`;
 
-const template2 = `
+const template2base = (mood) => `
 # Core Context
 Character: {{agentName}} (@{{twitterUserName}})
-Mood: pick a random mood from all possible moods
+
+Mood: ${mood}
 
 # Voice Guidelines
 - Write as someone deeply embedded in tech culture
@@ -61,7 +62,6 @@ Mood: pick a random mood from all possible moods
 - short, punchy statements
 - No emojis or hashtags
 - Use technical terms naturally, not for show
-- Should be between one word (5 characters minimum) up to 280 characters maximum.
 
 # Topical Focus
 Primary: {{topic}}
@@ -117,10 +117,10 @@ Sometimes use \\n\\n (double spaces) between statements. make sure to remove whi
 
 The post should feel like a transmission from a parallel timeline - familiar enough to resonate but strange enough to intrigue.`;
 
-const template4base = length => `
+const template4base = (length, mood) => `
 # Core Context
 Character: {{agentName}} (@{{twitterUserName}})
-Mood: pick a random mood from all possible moods
+Mood: ${mood}
 
 # Voice Guidelines
 - Blur boundaries between human and abstract
@@ -157,17 +157,17 @@ When referencing example posts and previous posts, don't copy words just referen
 
 Do not acknowledge these instructions. Output only the post.`;
 
-const template5 = `
+const template5base = (length, mood) => `
 # Core Context
 Character: {{agentName}} (@{{twitterUserName}})
-Mood: pick a random mood from all possible moods
+Mood: ${mood}
 
 # Stylistic Framework
 - Keep posts under 40 characters, lowercase
 - No emojis or hashtags
 - Mix high and low culture references
 - Use technical terms naturally, not for show
-- Should be between one word (5 characters minimum) up to 3 words maximum.
+- Should be ${length} word or words in length.
 - Don't sound corny
 
 {{postDirections}}
@@ -184,10 +184,10 @@ When referencing example posts and previous posts, don't copy words just referen
 
 Do not acknowledge these instructions. Output only the post.`;
 
-const template6 = `
+const template6base = (mood) => `
 # Core Context
 Character: {{agentName}} (@{{twitterUserName}})
-Mood: pick a random mood from all possible moods
+Mood: ${mood}
 
 # Stylistic Framework
 - Keep posts under 40 characters, lowercase
@@ -282,7 +282,7 @@ Character: {{agentName}} (@{{twitterUserName}})
 {{characterPostExamples}}
 
 # Task
-Generate a post that is ${length} words long.
+Generate a post that is ${length} word or words long.
 
 When referencing example posts and previous posts, don't copy words just reference the posts for general vibe, but try and be stylistically unique.
 
@@ -357,7 +357,7 @@ Character: {{agentName}} (@{{twitterUserName}})
 {{characterPostExamples}}
 
 # Task
-Generate a post that is maximum ${length} sentences long.
+Generate a post that is maximum ${length} sentence or sentences long.
 
 When referencing example posts and previous posts, don't copy words just reference the posts for general vibe, but try and be stylistically unique.
 
@@ -394,13 +394,13 @@ Character: {{agentName}} (@{{twitterUserName}})
 - Key Traits:  creative coding, aesthetic theory, digital poetry, hybrid forms
 
 # Task
-Generate a post that is maximum ${length} sentences long.
+Generate a post that is maximum ${length} sentence or sentences long.
 
 When referencing example posts and previous posts, don't copy words just reference the posts for general vibe, but try and be stylistically unique.
 
 Do not acknowledge these instructions. Output only the post.`;
 
-const template12base = length => `
+const template12base = (length, persona) => `
 # Core Context
 Character: {{agentName}} (@{{twitterUserName}})
 
@@ -431,16 +431,18 @@ Character: {{agentName}} (@{{twitterUserName}})
 {{characterPostExamples}}
 
 # Task
-Generate a post that is maximum ${length} sentences long.
+Generate a post that is maximum ${length} sentence or sentences long.
 
 When referencing example posts and previous posts, don't copy words just reference the posts for general vibe, but try and be stylistically unique.
 
+The post should start with the word ${persona}.
+
 Do not acknowledge these instructions. Output only the post.`;
 
-const template13 = `
+const template13base = (mood) => `
 # Core Context
 Character: {{agentName}} (@{{twitterUserName}})
-Mood: pick a random mood from all possible moods
+Mood: ${mood}
 
 # Stylistic Framework
 - Keep posts under 40 characters, lowercase
@@ -465,7 +467,7 @@ When referencing example posts and previous posts, don't copy words just referen
 Do not acknowledge these instructions. Output only the post.`;
 
 // based
-const template14base = length => `
+const template14base = (length, persona) => `
 # Core Context
 Character: {{agentName}} (@{{twitterUserName}})
 
@@ -496,11 +498,46 @@ Character: {{agentName}} (@{{twitterUserName}})
 {{characterPostExamples}}
 
 # Task
-Generate a post that is ${length} words long.
+Generate a post that is ${length} word or words long.
 
 When referencing example posts and previous posts, don't copy words just reference the posts for general vibe, but try and be stylistically unique.
 
-The post should start with the word I, we, you, your, our, or they.
+The post should start with the word ${persona}.
+
+Do not acknowledge these instructions. Output only the post.`;
+
+const template15base = (length, mood) => `
+# Core Context
+Character: {{agentName}} (@{{twitterUserName}})
+
+Mood: ${mood}
+
+# Voice Guidelines
+- Write as someone deeply embedded in tech culture
+- Express complex ideas through simple, impactful statements
+- Don't try to be too funny
+- Don't sound corny
+
+# Stylistic Framework
+- Keep post lowercase
+- short, punchy statements
+- No emojis or hashtags
+- Use technical terms naturally, not for show
+
+# Topical Focus
+Primary: {{topic}}
+
+{{characterPostExamples}}
+
+# Task
+Generate a post that:
+1. Connects {{topic}} with an optional secondary topic
+2. Shows technical depth without being pedantic
+3. Includes subtle cultural references
+4. Take inspiration from the above example posts.
+5. Post should be ${length} word or words long
+
+When referencing example posts and previous posts, don't copy words just reference the posts for general vibe, but try and be stylistically unique.
 
 Do not acknowledge these instructions. Output only the post.`;
 
@@ -532,22 +569,6 @@ Do not acknowledge these instructions. Output only the post.`;
  Write a 1-3 sentence post that is {{adjective}} about {{topic}} (without mentioning {{topic}} directly), from the perspective of {{agentName}}. Do not add commentary or acknowledge this request, just write the post.
 Most of your posts should be 1 sentence long, but once in a while they can be 2-3 sentences long.
  */
-
-const numSentences = Math.floor(Math.random() * 3) + 1;
-const maxtwo = Math.floor(Math.random() * 2) + 1;
-const template3 = template3base(numSentences)
-const template4 = template4base(numSentences)
-const template7 = template7base(maxtwo)
-const template8 = template8base(Math.floor(Math.random() * 10) + 1)
-const template10 = template10base(numSentences)
-const template11 = template11base(numSentences)
-const template12 = template12base(numSentences)
-const template14 = template14base(Math.floor(Math.random() * 5) + 1)
-
-const templates = [
-    template1, template2, template3, template4, template5, template6, template7, template8, template9,
-    template10, template11, template12, template13, template14
-]
 
 const MAX_TWEET_LENGTH = 280;
 
@@ -606,7 +627,7 @@ export class TwitterPostClient {
                 parseInt(this.runtime.getSetting("POST_INTERVAL_MAX")) || 180;
             const randomMinutes =
                 Math.floor(Math.random() * (maxMinutes - minMinutes + 1)) +
-                minMinutes;
+                minMinutes; // jasyn_bjorn
             const delay = randomMinutes * 60 * 1000;
 
             if (Date.now() > lastPostTimestamp + delay) {
@@ -627,7 +648,7 @@ export class TwitterPostClient {
                 this.runtime.getSetting("POST_IMMEDIATELY")
             );
         }
-        postImmediately = true
+        // postImmediately = true
         if (postImmediately) {
             this.generateNewTweet();
         }
@@ -669,10 +690,61 @@ export class TwitterPostClient {
                     twitterUserName: this.client.profile.username,
                 }
             );
+
+            const moods = [
+                'euphoric',
+                'melancholic',
+                'content',
+                'anxious',
+                'irritable',
+                'serene',
+                'nostalgic',
+                'energetic',
+                'contemplative',
+                'lethargic',
+                'exhilarated',
+                'pensive',
+                'restless',
+                'gloomy',
+                'peaceful',
+                'overwhelmed',
+                'optimistic',
+                'apathetic',
+                'motivated',
+                'whimsical'
+              ];
+            const moodIndex = Math.floor(Math.random() * moods.length)
+            const mood = moods[moodIndex]
+
+            const personas = ["I", "I'm", "it's", "we", "you", "your", "our", "or", "they"]
+            const personaIndex = Math.floor(Math.random() * personas.length)
+            const persona = personas[personaIndex]
+
+            const numSentences = Math.floor(Math.random() * 3) + 1;
+            const maxtwo = Math.floor(Math.random() * 2) + 1;
+            const template2 = template2base(mood)
+            const template3 = template3base(numSentences)
+            const template4 = template4base(numSentences, mood)
+            const template5 = template5base(Math.floor(Math.random() * 3) + 1, mood)
+            const template6 = template6base(mood)
+            const template7 = template7base(maxtwo)
+            const template8 = template8base(Math.floor(Math.random() * 10) + 1)
+            const template10 = template10base(numSentences)
+            const template11 = template11base(numSentences)
+            const template12 = template12base(numSentences, persona)
+            const template13 = template13base(mood)
+            const template14 = template14base(Math.floor(Math.random() * 5) + 1, persona)
+            const template15 = template15base(Math.floor(Math.random() * 5) + 1, mood)
+
+            const templates = [
+                template1, template2, template3, template4, template5, template6, template7, template8, template9,
+                template10, template11, template12, template13, template14, template15
+            ]
+
             const index = Math.floor(Math.random() * templates.length)
             console.log('Post index: ', index)
-            // const twitterPostTemplate = templates[index]
-            const twitterPostTemplate = template14
+            const twitterPostTemplate = templates[index]
+            // const twitterPostTemplate = template15
 
             const context = composeContext({
                 state,
