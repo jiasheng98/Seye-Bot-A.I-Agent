@@ -10,4 +10,4 @@
 
 ## Defined in
 
-[packages/core/src/embedding.ts:118](https://github.com/dabit3/ai-agent-cognitivedriftt/blob/main/packages/core/src/embedding.ts#L118)
+[packages/core/src/embedding.ts:120](https://github.com/dabit3/ai-agent-cognitivedriftt/blob/main/packages/core/src/embedding.ts#L120)
